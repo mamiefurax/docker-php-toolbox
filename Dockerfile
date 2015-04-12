@@ -25,8 +25,10 @@ RUN apt-get update && \
 
 RUN curl -o /phpunit https://phar.phpunit.de/phpunit.phar && \
 	curl -o /composer https://getcomposer.org/composer.phar && \
+	curl -o /phpcs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && \
 	curl -o /behat https://github.com/downloads/Behat/Behat/behat.phar && \
-	chmod +x /phpunit /composer /behat
+	curl -o /php-cs-fixer http://get.sensiolabs.org/php-cs-fixer.phar && \
+	chmod +x /phpunit /composer /behat /php-cs-fixer /phpcs
 
 WORKDIR /app
 VOLUME ["/app"]
