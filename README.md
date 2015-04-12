@@ -36,7 +36,7 @@ docker run \
 	--rm \
 	-v $(pwd):/app \
 	-w /app \
-	kingsquare/docker-php-toolbox:latest /phpunit $*
+	docker-php-toolbox:latest /phpunit $*
 ```
 for the other tools, you could replace ```phpunit``` with ```composer``` or ```behat```
 
