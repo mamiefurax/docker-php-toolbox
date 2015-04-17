@@ -12,8 +12,8 @@ MAINTAINER mamiefurax <mamiefurax@gmail.com>
 
 ENV TZ "Europe/Paris"
 
-RUN apt-get update && \
-	apt-get install --no-install-recommends -qy git libmcrypt-dev zlib1g-dev sudo && \
+RUN apt-get update -qq && \
+	apt-get install --no-install-recommends -qy libmcrypt-dev zlib1g-dev sudo curl wget git ssh && \
 	apt-get autoremove -yq --purge && \
 	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* && \
 	docker-php-ext-install mcrypt && \
