@@ -13,7 +13,7 @@ MAINTAINER mamiefurax <mamiefurax@gmail.com>
 ENV TZ "Europe/Paris"
 
 RUN apt-get update && \
-	apt-get install --no-install-recommends -qy git libmcrypt-dev zlib1g-dev && \
+	apt-get install --no-install-recommends -qy git libmcrypt-dev zlib1g-dev sudo && \
 	apt-get autoremove -yq --purge && \
 	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* && \
 	docker-php-ext-install mcrypt && \
@@ -29,8 +29,6 @@ RUN curl -o /phpunit https://phar.phpunit.de/phpunit.phar && \
 	curl -o /behat https://github.com/downloads/Behat/Behat/behat.phar && \
 	curl -o /php-cs-fixer http://get.sensiolabs.org/php-cs-fixer.phar && \
 	chmod +x /phpunit /composer /behat /php-cs-fixer /phpcs
-
-RUN apt-get -y install sudo
 
 WORKDIR /app
 VOLUME ["/app"]
