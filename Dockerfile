@@ -30,5 +30,7 @@ RUN curl -o /phpunit https://phar.phpunit.de/phpunit.phar && \
 	curl -o /php-cs-fixer http://get.sensiolabs.org/php-cs-fixer.phar && \
 	chmod +x /phpunit /composer /behat /php-cs-fixer /phpcs
 
+RUN apt-get -y install sudo
+
 WORKDIR /app
 VOLUME ["/app"]
