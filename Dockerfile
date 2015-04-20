@@ -21,7 +21,7 @@ RUN apt-get update -qq && \
 	docker-php-ext-install mbstring && \
 	pecl install xdebug && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
-	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini
+	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini && \
 	echo "phar.readonly = Off" > /usr/local/etc/php/conf.d/phar.ini
 
 RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \	
