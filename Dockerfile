@@ -23,12 +23,12 @@ RUN apt-get update -qq && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
 	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini
 
-RUN curl -o /phpunit https://phar.phpunit.de/phpunit.phar && \
-	curl -o /composer https://getcomposer.org/composer.phar && \
-	curl -o /phpcs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && \
-	curl -o /behat https://cloud.github.com/downloads/Behat/Behat/behat.phar && \
-	curl -o /php-cs-fixer http://get.sensiolabs.org/php-cs-fixer.phar && \
-	chmod +x /phpunit /composer /behat /php-cs-fixer /phpcs
+RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \
+	curl -O -L https://getcomposer.org/composer.phar && \
+	curl -O -L https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && \
+	curl -O -L https://github.com/Behat/Behat/releases/download/v3.0.15/behat.phar
+	curl -O -L http://get.sensiolabs.org/php-cs-fixer.phar && \
+	chmod +x /phpunit.phar /composer.phar /behat.phar /php-cs-fixer.phar /phpcs.phar
 
 WORKDIR /app
 VOLUME ["/app"]
