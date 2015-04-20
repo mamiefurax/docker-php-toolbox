@@ -30,5 +30,8 @@ RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \
 	curl -O -L http://get.sensiolabs.org/php-cs-fixer.phar && \
 	chmod +x /phpunit.phar /composer.phar /behat.phar /php-cs-fixer.phar /phpcs.phar
 
+RUN mkdir /Symfony2-coding-standard && git clone git://github.com/escapestudios/Symfony2-coding-standard.git /Symfony2-coding-standard
+RUN /phpcs.phar --config-set installed_paths /Symfony2-coding-standard
+
 WORKDIR /app
 VOLUME ["/app"]
