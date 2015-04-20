@@ -22,8 +22,9 @@ RUN apt-get update -qq && \
 	pecl install xdebug && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
 	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini
+	echo "phar.readonly = Off" > /usr/local/etc/php/conf.d/phar.ini
 
-RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \
+RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \	
 	curl -O -L https://getcomposer.org/composer.phar && \
 	curl -O -L https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && \
 	curl -O -L https://github.com/Behat/Behat/releases/download/v3.0.15/behat.phar && \
