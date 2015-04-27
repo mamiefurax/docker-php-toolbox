@@ -34,5 +34,8 @@ RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \
 RUN mkdir /Symfony2-coding-standard && git clone git://github.com/escapestudios/Symfony2-coding-standard.git /Symfony2-coding-standard
 RUN /phpcs.phar --config-set installed_paths /Symfony2-coding-standard
 
+RUN apt-get clean 
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 WORKDIR /app
 VOLUME ["/app"]
