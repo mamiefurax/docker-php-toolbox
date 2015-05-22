@@ -7,7 +7,7 @@
 # The app should be mounted into /app to work
 #
 ###
-FROM php:cli
+FROM php:5.3-cli
 MAINTAINER mamiefurax <mamiefurax@gmail.com>
 
 ENV TZ "Europe/Paris"
