@@ -22,7 +22,9 @@ RUN apt-get update -qq && \
 	pecl install xdebug && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
 	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini && \
-	echo "phar.readonly = Off" > /usr/local/etc/php/conf.d/phar.ini
+	echo "phar.readonly = Off" > /usr/local/etc/php/conf.d/phar.ini && \
+	echo "display_errors = On" >> /usr/local/etc/php/conf.d/errors_reporting.ini && \
+	echo "error_reporting = E_ALL \& ~E_DEPRECATED \& ~E_NOTICE" >> /usr/local/etc/php/conf.d/errors_reporting.ini
 
 RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \	
 	curl -O -L https://getcomposer.org/composer.phar && \
