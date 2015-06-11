@@ -16,9 +16,13 @@ RUN apt-get update -qq && \
 	apt-get install --no-install-recommends -qy libmcrypt-dev zlib1g-dev sudo curl wget git ssh && \
 	apt-get autoremove -yq --purge && \
 	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* && \
+	docker-php-ext-configure pdo && \
 	docker-php-ext-install pdo && \
-	#docker-php-ext-install gd && \
-	#docker-php-ext-install xml && \
+	docker-php-ext-configure gd && \
+	docker-php-ext-install gd && \
+	docker-php-ext-configure xml && \
+	docker-php-ext-install xml && \
+	docker-php-ext-configure intl && \
 	docker-php-ext-install intl && \
 	docker-php-ext-install mcrypt && \
 	docker-php-ext-install zip && \
