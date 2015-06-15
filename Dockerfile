@@ -23,11 +23,11 @@ RUN apt-get update -qq && \
 #	docker-php-ext-configure xml && \
 #	docker-php-ext-install xml && \
 #	docker-php-ext-configure intl && \
-	docker-php-ext-install intl && \
+#	docker-php-ext-install intl && \
 	docker-php-ext-install mcrypt && \
 	docker-php-ext-install zip && \
 	docker-php-ext-install mbstring && \
-	docker-php-ext-install curl && \
+#	docker-php-ext-install curl && \
 	pecl install xdebug && \
 	pecl install pecl_http-1.7.6 && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
