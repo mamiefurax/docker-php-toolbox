@@ -35,12 +35,12 @@ RUN apt-get update -qq && \
 	echo "display_errors = On" >> /usr/local/etc/php/conf.d/errors_reporting.ini && \
 	echo "error_reporting = E_ALL \& ~E_DEPRECATED \& ~E_NOTICE" >> /usr/local/etc/php/conf.d/errors_reporting.ini
 
-RUN apt-get update
-RUN apt-get -y install php5-dev
-RUN apt-get -y install libcurl4-openssl-dev
-RUN apt-get -y install libevent-dev
-RUN yes "" | pecl install pecl_http-1.7.6
-RUN echo "extension=http.so" > /usr/local/etc/php/conf.d/pecl-http.ini
+#RUN apt-get update
+#RUN apt-get -y install php5-dev
+#RUN apt-get -y install libcurl4-openssl-dev
+#RUN apt-get -y install libevent-dev
+#RUN yes "" | pecl install pecl_http-1.7.6
+#RUN echo "extension=http.so" > /usr/local/etc/php/conf.d/pecl-http.ini
 
 RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \	
 	curl -O -L https://getcomposer.org/composer.phar && \
