@@ -27,6 +27,8 @@ RUN apt-get update -qq && \
 	docker-php-ext-install mcrypt && \
 	docker-php-ext-install zip && \
 	docker-php-ext-install mbstring && \
+	docker-php-ext-install raph && \
+	docker-php-ext-install propro && \
 #	docker-php-ext-install curl && \
 	pecl install xdebug && \
 	echo "\n"|pecl install pecl_http && \
