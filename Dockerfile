@@ -29,11 +29,11 @@ RUN apt-get update -qq && \
 	docker-php-ext-install mbstring && \
 	docker-php-ext-install raph && \
 	docker-php-ext-install propro && \
+	echo "extension=raphf.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
+     	echo "extension=propro.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
 #	docker-php-ext-install curl && \
 	pecl install xdebug && \
 	echo "\n"|pecl install pecl_http && \
-     	echo "extension=raphf.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
-     	echo "extension=propro.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
 	echo "extension=http.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
 	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini && \
