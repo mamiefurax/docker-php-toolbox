@@ -27,8 +27,8 @@ RUN apt-get update -qq && \
 	docker-php-ext-install mcrypt && \
 	docker-php-ext-install zip && \
 	docker-php-ext-install mbstring && \
-	docker-php-ext-install raph && \
-	docker-php-ext-install propro && \
+	pecl install raph && \
+	pecl install propro && \
 	echo "extension=raphf.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
      	echo "extension=propro.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
 #	docker-php-ext-install curl && \
