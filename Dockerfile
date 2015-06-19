@@ -13,7 +13,7 @@ MAINTAINER mamiefurax <mamiefurax@gmail.com>
 ENV TZ "Europe/Paris"
 
 RUN apt-get update -qq && \
-	apt-get install --no-install-recommends -qy libmcrypt-dev zlib1g-dev sudo curl-dev wget git ssh php-http php-http-request php-net-socket php-net-url && \
+	apt-get install --no-install-recommends -qy libmcrypt-dev zlib1g-dev sudo curl libcurl3 libcurl4-gnutls-dev libmagic-dev wget git ssh && \
 	apt-get autoremove -yq --purge && \
 	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* && \
 #	docker-php-ext-configure pdo && \
