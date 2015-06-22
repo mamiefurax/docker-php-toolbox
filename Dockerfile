@@ -33,7 +33,7 @@ RUN apt-get update -qq && \
      	echo "extension=propro.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
 #	docker-php-ext-install curl && \
 	pecl install xdebug && \
-	echo "\n"|pecl install pecl_http && \
+	pecl install pecl_http && \
 	echo "extension=http.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
 	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini && \
