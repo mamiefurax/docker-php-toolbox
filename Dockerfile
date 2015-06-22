@@ -29,8 +29,8 @@ RUN apt-get update -qq && \
 	docker-php-ext-install mbstring && \
 	pecl install raphf && \
 	pecl install propro && \
-	echo "extension=raphf.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
-     	echo "extension=propro.so" > /usr/local/etc/php/conf.d/pecl-http.ini && \
+	echo "extension=raphf.so" >> /usr/local/etc/php/conf.d/pecl-http.ini && \
+     	echo "extension=propro.so" >> /usr/local/etc/php/conf.d/pecl-http.ini && \
 #	docker-php-ext-install curl && \
 	pecl install xdebug && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
@@ -40,7 +40,7 @@ RUN apt-get update -qq && \
 	echo "error_reporting = E_ALL" >> /usr/local/etc/php/conf.d/errors_reporting.ini
 	
 RUN pecl install pecl_http && \
-	echo "extension=http.so" > /usr/local/etc/php/conf.d/pecl-http.ini
+	echo "extension=http.so" >> /usr/local/etc/php/conf.d/pecl-http.ini
 
 RUN curl -O -L https://phar.phpunit.de/phpunit.phar && \	
 	curl -O -L https://getcomposer.org/composer.phar && \
