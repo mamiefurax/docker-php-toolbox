@@ -27,6 +27,8 @@ RUN apt-get update -qq && \
      	echo "extension=http.so" >> /usr/local/etc/php/conf.d/pecl-http.ini && \
 	pecl install xdebug && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
+	pecl install -f xhprof && \
+	echo "extension=xhprof.so" > /usr/local/etc/php/conf.d/xhprof.ini && \
 	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini && \
 	echo "phar.readonly = Off" > /usr/local/etc/php/conf.d/phar.ini && \
 	echo "display_errors = On" >> /usr/local/etc/php/conf.d/errors_reporting.ini && \
