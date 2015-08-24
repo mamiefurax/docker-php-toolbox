@@ -19,6 +19,7 @@ RUN apt-get update -qq && \
 	docker-php-ext-install mcrypt && \
 	docker-php-ext-install zip && \
 	docker-php-ext-install mbstring && \
+	docker-php-ext-install intl && \
 	pecl install raphf && \
 	pecl install propro && \
 	echo "extension=raphf.so" >> /usr/local/etc/php/conf.d/pecl-http.ini && \
