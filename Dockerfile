@@ -13,7 +13,7 @@ MAINTAINER mamiefurax <mamiefurax@gmail.com>
 ENV TZ "Europe/Paris"
 
 RUN apt-get update -qq && \
-	apt-get install --no-install-recommends -qy libmcrypt-dev zlib1g-dev sudo zlib1g-dev libidn11-dev curl libcurl3 libpcre3-dev libcurl4-openssl-dev libevent-dev php-http php5-dev wget git ssh graphviz icu libicu && \
+	apt-get install --no-install-recommends -qy libmcrypt-dev zlib1g-dev sudo zlib1g-dev libidn11-dev curl libcurl3 libpcre3-dev libcurl4-openssl-dev libevent-dev php-http php5-dev wget git ssh graphviz libicu-dev && \
 	apt-get autoremove -yq --purge && \
 	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* && \
 	docker-php-ext-install mcrypt && \
