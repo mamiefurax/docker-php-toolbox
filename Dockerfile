@@ -55,7 +55,7 @@ RUN export VERSION=`php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;"` \
     && echo "extension=blackfire.so\nblackfire.agent_socket=8707" > /usr/local/etc/php/conf.d/blackfire.ini
     
 # Set more memory limit
-RUN echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini
+RUN echo "memory_limit=0" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 WORKDIR /app
 VOLUME ["/app"]
